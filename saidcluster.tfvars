@@ -1,0 +1,15 @@
+
+master_instance_type       =  "t2.micro"
+bastion_instance_type      =  "t2.micro"
+image_id                   =  "ami-01666ac8d55438d0b"
+Env                        =  "Dev"
+Created_by                 =  "addiani"
+Dept                       =  "IT"
+aws_region                 =  "us-east-2"
+master_instance_type       =      "t2.micro"
+bastion_instance_type      =      "t2.micro"
+image_id                   =      "ami-01666ac8d55438d0b"
+Env                        =      "Dev"
+Dept                       =      "IT"
+aws_region                 =      "us-east-2"
+
