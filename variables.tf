@@ -6,6 +6,9 @@ variable "node_min_size" {}
 variable "node_max_size" {}
 
   
+variable "node_instance_type" {}
+  
+
 
 
 

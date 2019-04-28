@@ -286,7 +286,7 @@ resource "aws_launch_configuration" "master-us-east-2c-masters-saidcluster-com" 
 resource "aws_launch_configuration" "nodes-saidcluster-com" {
   name_prefix                 = "nodes.saidcluster.com-"
   image_id                    = "ami-033476a646ce264ac"
-  instance_type               = "t2.micro"
+  instance_type               = "${var.node_instance_type}"
   key_name                    = "${aws_key_pair.kubernetes-saidcluster-com-3bab0dd85293ba38ff40febb6a920870.id}"
   iam_instance_profile        = "${aws_iam_instance_profile.nodes-saidcluster-com.id}"
   security_groups             = ["${aws_security_group.nodes-saidcluster-com.id}"]
