@@ -194,7 +194,7 @@ resource "aws_autoscaling_group" "nodes-saidcluster-com" {
 }
 resource "aws_launch_configuration" "bastions-saidcluster-com" {
   name_prefix                 = "bastions.saidcluster.com-"
-  image_id                    = "ami-033476a646ce264ac"
+  image_id                    = "${var.image_id}"
   instance_type               = "t2.micro"
   key_name                    = "${aws_key_pair.kubernetes-saidcluster-com-3bab0dd85293ba38ff40febb6a920870.id}"
   iam_instance_profile        = "${aws_iam_instance_profile.bastions-saidcluster-com.id}"
@@ -216,8 +216,8 @@ resource "aws_launch_configuration" "bastions-saidcluster-com" {
 
 resource "aws_launch_configuration" "master-us-east-2a-masters-saidcluster-com" {
   name_prefix                 = "master-us-east-2a.masters.saidcluster.com-"
-  image_id                    = "ami-033476a646ce264ac"
-  instance_type               = "t2.micro"
+  image_id                    = "${var.image_id}"
+  instance_type               = "${var.master_instance_type}"
   key_name                    = "${aws_key_pair.kubernetes-saidcluster-com-3bab0dd85293ba38ff40febb6a920870.id}"
   iam_instance_profile        = "${aws_iam_instance_profile.masters-saidcluster-com.id}"
   security_groups             = ["${aws_security_group.masters-saidcluster-com.id}"]
@@ -239,8 +239,8 @@ resource "aws_launch_configuration" "master-us-east-2a-masters-saidcluster-com" 
 
 resource "aws_launch_configuration" "master-us-east-2b-masters-saidcluster-com" {
   name_prefix                 = "master-us-east-2b.masters.saidcluster.com-"
-  image_id                    = "ami-033476a646ce264ac"
-  instance_type               = "t2.micro"
+  image_id                    = "${var.image_id}"
+  instance_type               = "${var.master_instance_type}"
   key_name                    = "${aws_key_pair.kubernetes-saidcluster-com-3bab0dd85293ba38ff40febb6a920870.id}"
   iam_instance_profile        = "${aws_iam_instance_profile.masters-saidcluster-com.id}"
   security_groups             = ["${aws_security_group.masters-saidcluster-com.id}"]
@@ -262,8 +262,8 @@ resource "aws_launch_configuration" "master-us-east-2b-masters-saidcluster-com" 
 
 resource "aws_launch_configuration" "master-us-east-2c-masters-saidcluster-com" {
   name_prefix                 = "master-us-east-2c.masters.saidcluster.com-"
-  image_id                    = "ami-033476a646ce264ac"
-  instance_type               = "t2.micro"
+  image_id                    = "${var.image_id}"
+  instance_type               = "${var.master_instance_type}"
   key_name                    = "${aws_key_pair.kubernetes-saidcluster-com-3bab0dd85293ba38ff40febb6a920870.id}"
   iam_instance_profile        = "${aws_iam_instance_profile.masters-saidcluster-com.id}"
   security_groups             = ["${aws_security_group.masters-saidcluster-com.id}"]
@@ -285,7 +285,7 @@ resource "aws_launch_configuration" "master-us-east-2c-masters-saidcluster-com" 
 
 resource "aws_launch_configuration" "nodes-saidcluster-com" {
   name_prefix                 = "nodes.saidcluster.com-"
-  image_id                    = "ami-033476a646ce264ac"
+  image_id                    = "${var.image_id}"
   instance_type               = "${var.node_instance_type}"
   key_name                    = "${aws_key_pair.kubernetes-saidcluster-com-3bab0dd85293ba38ff40febb6a920870.id}"
   iam_instance_profile        = "${aws_iam_instance_profile.nodes-saidcluster-com.id}"
