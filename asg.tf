@@ -21,8 +21,8 @@ resource "aws_autoscaling_attachment" "master-us-east-2c-masters-saidcluster-com
 resource "aws_autoscaling_group" "bastions-saidcluster-com" {
   name                 = "bastions.saidcluster.com"
   launch_configuration = "${aws_launch_configuration.bastions-saidcluster-com.id}"
-  max_size             = 1
-  min_size             = 1
+  max_size             = "${var.bastion_max_size}"
+  min_size             = "${var.bastion_min_size}"
   vpc_zone_identifier  = ["${aws_subnet.utility-us-east-2a-saidcluster-com.id}", "${aws_subnet.utility-us-east-2b-saidcluster-com.id}", "${aws_subnet.utility-us-east-2c-saidcluster-com.id}"]
 
   tag = {
