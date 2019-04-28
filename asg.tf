@@ -161,8 +161,8 @@ resource "aws_autoscaling_group" "master-us-east-2c-masters-saidcluster-com" {
 resource "aws_autoscaling_group" "nodes-saidcluster-com" {
   name                 = "nodes.saidcluster.com"
   launch_configuration = "${aws_launch_configuration.nodes-saidcluster-com.id}"
-  max_size             = 2
-  min_size             = 2
+  max_size             = "${var.node_max_size}"
+  min_size             = "${var.node_min_size}"
   vpc_zone_identifier  = ["${aws_subnet.us-east-2a-saidcluster-com.id}", "${aws_subnet.us-east-2b-saidcluster-com.id}", "${aws_subnet.us-east-2c-saidcluster-com.id}"]
 
   tag = {
