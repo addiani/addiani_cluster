@@ -3,3 +3,10 @@ bastion_max_size    =  "1"
 node_max_size       =  "2"
 node_min_size       =  "2"
 node_instance_type  =  "t2.micro"
+variable "Env" {}
+variable "Created_by" {}
+variable "Dept" {}
+variable "master_instance_type" {}
+variable "image_id" {}
+variable "aws_region" {}
+variable "bastion_instance_type" {}
